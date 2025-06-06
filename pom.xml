@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+                             
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mycompany</groupId>
@@ -12,8 +12,8 @@
     <packaging>jar</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <build>
@@ -32,7 +32,27 @@
         </resources>
 
         <plugins>
-            <!-- Plugin para importar WSDL -->
+            <!-- Compilación Java 17 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+
+            <!-- Ejecutar aplicación -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.mycompany.wsclient.vista_cliente_RecuReyesValdez</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- wsimport plugin moderno (Metro 4.x) -->
             <plugin>
                 <groupId>com.sun.xml.ws</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
@@ -45,61 +65,42 @@
                         </goals>
                         <configuration>
                             <wsdlUrls>
-                                <wsdlUrl>http://localhost:8080/parcial1_reyesvaldezMarco_web_operaciones_9a/calcularIntensidad?wsdl</wsdlUrl>
+                                <wsdlUrl>http://localhost:8080/parcial1_reyesvaldezMarco_web_operaciones_9a/recu_reyesValdez_web_operaciones_9a?wsdl</wsdlUrl>
                             </wsdlUrls>
                             <packageName>com.mycompany.wsclient</packageName>
                             <sourceDestDir>${project.build.sourceDirectory}</sourceDestDir>
                             <extension>true</extension>
+                            <verbose>true</verbose>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-
-            <!-- Plugin para compilar con Java 17 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
-                <configuration>
-                    <release>17</release>
-                </configuration>
-            </plugin>
-
-            <!-- Plugin para ejecutar la clase main -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <mainClass>com.mycompany.wsclient.vista_cliente_MarcoValdez</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>
 
     <dependencies>
-        <!-- API de JAXB -->
+        <!-- JAXB API -->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
             <version>4.0.0</version>
         </dependency>
 
-        <!-- Runtime de JAXB -->
+        <!-- JAXB Runtime -->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
             <version>4.0.2</version>
         </dependency>
 
-        <!-- API de Jakarta JAX-WS (servicios web) -->
+        <!-- JAX-WS API -->
         <dependency>
             <groupId>jakarta.xml.ws</groupId>
             <artifactId>jakarta.xml.ws-api</artifactId>
             <version>4.0.0</version>
         </dependency>
 
-        <!-- Implementación de JAX-WS (Metro) -->
+        <!-- Metro (JAX-WS Runtime) -->
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-rt</artifactId>

@@ -24,8 +24,8 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private static final QName _CalcularIntensidad_QNAME = new QName("http://parcial1_reyesvaldezmarco_web_operaciones_9a.mycompany.com/", "calcularIntensidad");
-    private static final QName _CalcularIntensidadResponse_QNAME = new QName("http://parcial1_reyesvaldezmarco_web_operaciones_9a.mycompany.com/", "calcularIntensidadResponse");
+    private static final QName _CalcularMasa_QNAME = new QName("http://parcial1_reyesvaldezmarco_web_operaciones_9a.mycompany.com/", "calcularMasa");
+    private static final QName _CalcularMasaResponse_QNAME = new QName("http://parcial1_reyesvaldezmarco_web_operaciones_9a.mycompany.com/", "calcularMasaResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.mycompany.wsclient
@@ -35,49 +35,49 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CalcularIntensidad_Type }
+     * Create an instance of {@link CalcularMasa }
      * 
      * @return
-     *     the new instance of {@link CalcularIntensidad_Type }
+     *     the new instance of {@link CalcularMasa }
      */
-    public CalcularIntensidad_Type createCalcularIntensidad_Type() {
-        return new CalcularIntensidad_Type();
+    public CalcularMasa createCalcularMasa() {
+        return new CalcularMasa();
     }
 
     /**
-     * Create an instance of {@link CalcularIntensidadResponse }
+     * Create an instance of {@link CalcularMasaResponse }
      * 
      * @return
-     *     the new instance of {@link CalcularIntensidadResponse }
+     *     the new instance of {@link CalcularMasaResponse }
      */
-    public CalcularIntensidadResponse createCalcularIntensidadResponse() {
-        return new CalcularIntensidadResponse();
+    public CalcularMasaResponse createCalcularMasaResponse() {
+        return new CalcularMasaResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CalcularIntensidad_Type }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CalcularMasa }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link CalcularIntensidad_Type }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link CalcularMasa }{@code >}
      */
-    @XmlElementDecl(namespace = "http://parcial1_reyesvaldezmarco_web_operaciones_9a.mycompany.com/", name = "calcularIntensidad")
-    public JAXBElement<CalcularIntensidad_Type> createCalcularIntensidad(CalcularIntensidad_Type value) {
-        return new JAXBElement<>(_CalcularIntensidad_QNAME, CalcularIntensidad_Type.class, null, value);
+    @XmlElementDecl(namespace = "http://parcial1_reyesvaldezmarco_web_operaciones_9a.mycompany.com/", name = "calcularMasa")
+    public JAXBElement<CalcularMasa> createCalcularMasa(CalcularMasa value) {
+        return new JAXBElement<>(_CalcularMasa_QNAME, CalcularMasa.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CalcularIntensidadResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CalcularMasaResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link CalcularIntensidadResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link CalcularMasaResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://parcial1_reyesvaldezmarco_web_operaciones_9a.mycompany.com/", name = "calcularIntensidadResponse")
-    public JAXBElement<CalcularIntensidadResponse> createCalcularIntensidadResponse(CalcularIntensidadResponse value) {
-        return new JAXBElement<>(_CalcularIntensidadResponse_QNAME, CalcularIntensidadResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://parcial1_reyesvaldezmarco_web_operaciones_9a.mycompany.com/", name = "calcularMasaResponse")
+    public JAXBElement<CalcularMasaResponse> createCalcularMasaResponse(CalcularMasaResponse value) {
+        return new JAXBElement<>(_CalcularMasaResponse_QNAME, CalcularMasaResponse.class, null, value);
     }
 
 }
